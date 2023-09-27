@@ -6,8 +6,10 @@ RUN apt-get update && \
 
 RUN pip install sphinx==1.8 numpy
 RUN gem install jekyll bundler jekyll-redirect-from
+RUN pip install jinja2==2.11.3 markupsafe==2.0
 
 WORKDIR /mnt/graphframes
 
 # redefine the entrypoint to empty so that we can run the shell command with `docker run`.
 ENTRYPOINT []
+

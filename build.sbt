@@ -3,8 +3,6 @@
 
 import ReleaseTransformations._
 
-resolvers += "Spark snapshot repository" at "https://repository.apache.org/snapshots/"
-
 val sparkVer = sys.props.getOrElse("spark.version", "3.4.1")
 val sparkBranch = sparkVer.substring(0, 3)
 val defaultScalaVer = sparkBranch match {

@@ -10,8 +10,8 @@ RUN apt-get update && \
 # Install Spark and update env variables.
 ENV SCALA_VERSION 2.12.17
 ENV SPARK_VERSION "3.4.1"
-ENV SPARK_BUILD "spark-${SPARK_VERSION}-bin-hadoop3.2"
-ENV SPARK_BUILD_URL "https://dist.apache.org/repos/dist/release/spark/spark-${SPARK_VERSION}/${SPARK_BUILD}.tgz"
+ENV SPARK_BUILD "spark-${SPARK_VERSION}-bin-hadoop3"
+ENV SPARK_BUILD_URL "https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/${SPARK_BUILD}.tgz"
 RUN wget --quiet "$SPARK_BUILD_URL" -O /tmp/spark.tgz && \
     tar -C /opt -xf /tmp/spark.tgz && \
     mv /opt/$SPARK_BUILD /opt/spark && \
@@ -26,3 +26,4 @@ VOLUME /mnt/graphframes
 WORKDIR /mnt/graphframes
 
 ENTRYPOINT /bin/bash
+
